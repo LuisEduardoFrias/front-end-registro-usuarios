@@ -25,21 +25,18 @@ export class FormUser{
 
   constructor(private formBuild: FormBuilder, private router: Router, private Depar : DepartmentService)
   {
-
     this.Depar.Get().subscribe(o => this.Departments = o);
 
-    debugger;
-    
     this.form = formBuild.group(
-    {
-      name: ['', [Validators.required,Validators.max(25)]],
-      lastName : ['', [Validators.required,Validators.max(25)]],
-      gender: ['', [Validators.required]],
-      identificationCard: ['', [Validators.required,Validators.max(11)]],
-      birthDay: ['', [Validators.required]],
-      position : ['', [Validators.required],Validators.max(20)],
-      immediateSupervisor: ['', [Validators.required,Validators.max(25)]],
-      departmentId: ['', [Validators.required]]
+      {
+        name: ['', [Validators.required, Validators.max(25)]],
+        lastName: ['', [Validators.required, Validators.max(25)]],
+        gender: ['', [Validators.required]],
+        identificationCard: ['', [Validators.required, Validators.max(11)]],
+        birthDay: ['', [Validators.required]],
+        position: ['', [Validators.required, Validators.max(20)]],
+        immediateSupervisor: ['', [Validators.required,Validators.max(25)]],
+        departmentId: ['', [Validators.required]]
     });
   }
 

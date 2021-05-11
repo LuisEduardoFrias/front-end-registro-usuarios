@@ -14,7 +14,7 @@ export class CreateUserComponent{
   Post(createUser: CreateUserDto)
   {
     debugger;
-    this.UserService.Post(createUser).subscribe(observable => console.log(observable));
+    this.UserService.Post(createUser).subscribe(observable => alert(observable));
   }
 
 }

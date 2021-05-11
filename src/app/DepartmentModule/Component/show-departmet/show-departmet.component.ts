@@ -13,7 +13,6 @@ export class ShowDepartmetComponent {
 
   constructor(private departmetService: DepartmentService)
   {
-    debugger;
     departmetService.Get().subscribe(oberver => {this.depart = oberver});
   }
 }

@@ -14,7 +14,7 @@
         <label for="formFileDisabled" class="form-label">Sexo</label>
 
         <select class="form-select" formControlName="gender" aria-label="Default select example">
-        <option selected>Sexo</option>
+        <option selected>-Sexo-</option>
         <option value="m">Masculino</option>
         <option value="f">Femenino</option>
         </select>
@@ -45,7 +45,7 @@
 
         <label for="formFileLg" class="form-label">Supervisor impediato</label>
 
-        <select class="form-select" formControlName="DepartmentId" aria-label="Default select example">
+        <select class="form-select" formControlName="departmentId" aria-label="Default select example">
         <option selected>Departamento</option>
         <option *ngFor="let d of Departments" [ngValue]='d.code'>{{d.name}}</option>
         </select>
