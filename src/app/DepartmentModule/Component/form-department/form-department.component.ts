@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DepartmentDto } from 'src/app/Entities/Entities/department-dto';
+import { OnlyNumberDirective } from 'src/app/DepartmentModule/Directives/only-number.directive';
 
 @Component({
   selector: 'form-department',
