@@ -7,7 +7,7 @@ import { AppComponent } from '../Components/app-componet/app.component';
 import { HomeComponent } from '../Components/home/home.component';
 import { HeaderComponent } from '../Components/header/header.component';
 import { MenuComponent } from '../Components/menu/menu.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 
 @NgModule({
@@ -15,12 +15,12 @@ import { FormBuilder } from '@angular/forms';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    MenuComponent,
-    
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [FormBuilder, HttpClient],
   bootstrap: [AppComponent]

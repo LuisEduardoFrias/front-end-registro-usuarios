@@ -1,1 +1,28 @@
-<p>show-user works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Aplido</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Cédula</th>
+            <th scope="col">Fecha de nacimeinto</th>
+            <th scope="col">Posición</th>
+            <th scope="col">Supervisor inmediato</th>
+            <th scope="col">Departamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor(let u of user)>
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.name}}</td>
+            <td>{{u.lastName}}</td>
+            <td>{{u.gender}}</td>
+            <td>{{u.identificationCard}}</td>
+            <td>{{u.birthDay}}</td>
+            <td>{{u.position}}</td>
+            <td>{{u.immediateSupervisor}}</td>
+            <td>{{u.departmentName}}</td>
+        </tr>
+    </tbody>
+</table>

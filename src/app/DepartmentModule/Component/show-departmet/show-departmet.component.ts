@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DepartmentDto } from 'src/app/Entities/Entities/department-dto';
 import { DepartmentService } from 'src/app/services/Services/Department/department.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { DepartmentService } from 'src/app/services/Services/Department/departme
   styleUrls: ['./show-departmet.component.css']
 })
 export class ShowDepartmetComponent {
+
+  depart: DepartmentDto[];
 
   constructor(private departmetService: DepartmentService)
   {

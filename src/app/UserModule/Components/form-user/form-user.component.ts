@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CreateUserDto } from 'src/app/Entities/Entities/create-user-dto';
 
 @Component({
@@ -14,9 +15,12 @@ export class FormUser{
   @Output()
   post: EventEmitter<CreateUserDto>;
 
+  @Input()
+  cancelLink: string;
+
   public form: FormGroup;
 
-  constructor(private formBuild: FormBuilder)
+  constructor(private formBuild: FormBuilder, private router: Router)
   {
     this.form = formBuild.group(
     {
@@ -34,5 +38,9 @@ export class FormUser{
   Post()
   {
     this.post.emit(this.form.value);
+  }
+
+  Cancel() {
+    this.router.navigate([this.cancelLink]);
   }
 }

@@ -10,7 +10,13 @@
     </div>
     <div class="mb-3">
         <label for="formFileDisabled" class="form-label">Sexo</label>
-        <input class="form-control" id="exampleFormControlInput1" formControlName="gender" type="text">
+
+        <select class="form-select" formControlName="gender" aria-label="Default select example">
+        <option selected>Sexo</option>
+        <option value="m">Masculino</option>
+        <option value="f">Femenino</option>
+        </select>
+
     </div>
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Cédula</label>
@@ -27,6 +33,22 @@
     <div class="mb-3">
         <label for="formFileLg" class="form-label">Supervisor impediato</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="immediateSupervisor" type="text">
+    </div>
+
+    <div class="mb-3">
+        <label for="formFileLg" class="form-label">Supervisor impediato</label>
+
+        <select class="form-select" formControlName="DepartmentId" aria-label="Default select example">
+        <option selected>Departamento</option>
+        <option value="m">Masculino</option>
+        <option value="f">Femenino</option>
+        </select>
+
+    </div>
+
+    <div>
+        <button class="btn btn-primary">Crear</button>
+        <button class="btn btn-danger" (click)="Cancel()">Canselar</button>
     </div>
 
 </form>
