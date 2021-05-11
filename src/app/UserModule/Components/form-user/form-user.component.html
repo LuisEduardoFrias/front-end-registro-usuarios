@@ -4,10 +4,12 @@
         <label for="formFile" class="form-label">Nombre</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="name" type="text">
     </div>
+
     <div class="mb-3">
         <label for="formFileMultiple" class="form-label">Apellido</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="lastName" type="text">
     </div>
+
     <div class="mb-3">
         <label for="formFileDisabled" class="form-label">Sexo</label>
 
@@ -18,30 +20,34 @@
         </select>
 
     </div>
+
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Cédula</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="identificationCard" type="text">
     </div>
+
     <div>
         <label for="formFileLg" class="form-label">Fecha de nacimiento</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="birthDay" type="text">
     </div>
+
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Posición</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="position" type="text">
     </div>
+
     <div class="mb-3">
         <label for="formFileLg" class="form-label">Supervisor impediato</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="immediateSupervisor" type="text">
     </div>
 
     <div class="mb-3">
+
         <label for="formFileLg" class="form-label">Supervisor impediato</label>
 
         <select class="form-select" formControlName="DepartmentId" aria-label="Default select example">
         <option selected>Departamento</option>
-        <option value="m">Masculino</option>
-        <option value="f">Femenino</option>
+        <option *ngFor="let d of Departments" value="{{d.code}}">{{o.name}}</option>
         </select>
 
     </div>

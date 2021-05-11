@@ -3,6 +3,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CreateUserDto } from 'src/app/Entities/Entities/create-user-dto';
+import { DepartmentDto } from 'src/app/Entities/Entities/department-dto';
+import { DepartmentService } from 'src/app/services/Services/Department/department.service';
 
 @Component({
   selector: 'form-user',
@@ -13,15 +15,19 @@ import { CreateUserDto } from 'src/app/Entities/Entities/create-user-dto';
 export class FormUser{
 
   @Output()
-  post: EventEmitter<CreateUserDto>;
+  post: EventEmitter<CreateUserDto> = new EventEmitter<CreateUserDto>();
 
   @Input()
   cancelLink: string;
 
   public form: FormGroup;
+  public Departments: DepartmentDto[];
 
-  constructor(private formBuild: FormBuilder, private router: Router)
+  constructor(private formBuild: FormBuilder, private router: Router, private Depar : DepartmentService)
   {
+
+    this.Depar.Get().subscribe(o => this.Departments = o);
+
     this.form = formBuild.group(
     {
       name: ['', [Validators.required,Validators.max(25)]],

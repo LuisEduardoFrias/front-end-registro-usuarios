@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { DepartmentDto } from 'src/app/Entities/Entities/department-dto';
+import { DepartmentService } from 'src/app/services/Services/Department/department.service';
 
 @Component({
   selector: 'app-create-department',
   templateUrl: './create-department.component.html',
   styleUrls: ['./create-department.component.css']
 })
-export class CreateDepartmentComponent implements OnInit {
+export class CreateDepartmentComponent{
 
-  constructor() { }
+  constructor(private DepartmentService: DepartmentService) { }
 
-  ngOnInit(): void {
+  Post(Department : DepartmentDto) {
+     this.DepartmentService.Post(Department).subscribe(observable => console.log(observable));
   }
 
 }

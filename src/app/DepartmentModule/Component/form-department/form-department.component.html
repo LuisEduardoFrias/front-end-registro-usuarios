@@ -1,0 +1,18 @@
+<form (submit)="Post()">
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Codigo</label>
+        <input class="form-control" id="exampleFormControlInput1" formControlName="code" type="text">
+    </div>
+
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Nombre</label>
+        <input class="form-control" id="exampleFormControlInput1" formControlName="name" type="text">
+    </div>
+
+    <div>
+        <button class="btn btn-primary">Crear</button>
+        <button class="btn btn-danger" (click)="Cancel()">Canselar</button>
+    </div>
+
+</form>

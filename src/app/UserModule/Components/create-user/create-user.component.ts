@@ -7,12 +7,9 @@ import { UserService } from 'src/app/services/Services/User/user.service';
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.css']
 })
-export class CreateUserComponent implements OnInit {
+export class CreateUserComponent{
 
   constructor(private UserService: UserService) { }
-
-  ngOnInit(): void {
-  }
 
   Post(createUser : CreateUserDto) {
      this.UserService.Post(createUser).subscribe(observable => console.log(observable));

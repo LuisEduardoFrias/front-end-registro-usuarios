@@ -9,10 +9,10 @@ import { DepartmentService } from 'src/app/services/Services/Department/departme
 })
 export class ShowDepartmetComponent {
 
-  depart: DepartmentDto[];
+  public depart: DepartmentDto[];
 
   constructor(private departmetService: DepartmentService)
   {
-    departmetService.Get().subscribe(oberver => console.log(oberver));
+    departmetService.Get().subscribe(oberver => {this.depart = oberver});
   }
 }
