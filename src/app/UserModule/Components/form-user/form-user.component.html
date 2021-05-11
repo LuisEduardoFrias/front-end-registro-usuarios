@@ -23,12 +23,12 @@
 
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Cédula</label>
-        <input class="form-control" id="exampleFormControlInput1" formControlName="identificationCard" type="text">
+        <input class="form-control" mask="000-0000000-0" placeholder="000-0000000-0" id="exampleFormControlInput1" formControlName="identificationCard" type="text">
     </div>
 
     <div>
         <label for="formFileLg" class="form-label">Fecha de nacimiento</label>
-        <input class="form-control" id="exampleFormControlInput1" formControlName="birthDay" type="text">
+        <input class="form-control" id="exampleFormControlInput1" formControlName="birthDay" type="date">
     </div>
 
     <div class="mb-3">
@@ -47,14 +47,14 @@
 
         <select class="form-select" formControlName="DepartmentId" aria-label="Default select example">
         <option selected>Departamento</option>
-        <option *ngFor="let d of Departments" value="{{d.code}}">{{o.name}}</option>
+        <option *ngFor="let d of Departments" [ngValue]='d.code'>{{d.name}}</option>
         </select>
 
     </div>
 
     <div>
         <button class="btn btn-primary">Crear</button>
-        <button class="btn btn-danger" (click)="Cancel()">Cancelar</button>
+        <button class="btn btn-danger" (click)="Cancel()">volver</button>
     </div>
 
 </form>

@@ -28,6 +28,8 @@ export class FormUser{
 
     this.Depar.Get().subscribe(o => this.Departments = o);
 
+    debugger;
+    
     this.form = formBuild.group(
     {
       name: ['', [Validators.required,Validators.max(25)]],
