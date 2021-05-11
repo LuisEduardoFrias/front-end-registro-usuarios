@@ -13,7 +13,6 @@ export class CreateDepartmentComponent{
 
   Post(Department: DepartmentDto)
   {
-    debugger;
     this.DepartmentService.Post(Department).subscribe(observable => alert(observable));
   }
 

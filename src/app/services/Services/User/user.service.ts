@@ -22,6 +22,7 @@ export class UserService extends HttpService {
 
   Post(plan: CreateUserDto): Observable<any>
   {
+    debugger;
     return this.httpclien.post(`${this.linkServer}api/user`, plan, { headers: { "Content-Type": "application/json" } })
   }
 }

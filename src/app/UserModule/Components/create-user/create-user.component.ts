@@ -13,7 +13,6 @@ export class CreateUserComponent{
 
   Post(createUser: CreateUserDto)
   {
-    debugger;
     this.UserService.Post(createUser).subscribe(observable => alert(observable));
   }
 
