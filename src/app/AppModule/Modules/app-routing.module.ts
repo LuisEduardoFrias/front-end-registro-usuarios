@@ -15,11 +15,19 @@ const routes: Routes = [
     import('src/app/UserModule/Modules/user.module').then(m => m.UserModule)
   },
   {
+    path: 'usuarios/editar', loadChildren: () => 
+    import('src/app/UserModule/Modules/user.module').then(m => m.UserModule)
+  },
+  {
     path: 'departamentos', loadChildren: () => 
     import('src/app/DepartmentModule/Models/department.module').then(m => m.DepartmentModule)
   },
   {
     path: 'departamentos/crear', loadChildren: () => 
+    import('src/app/DepartmentModule/Models/department.module').then(m => m.DepartmentModule)
+  },
+  {
+    path: 'departamentos/editar', loadChildren: () => 
     import('src/app/DepartmentModule/Models/department.module').then(m => m.DepartmentModule)
   },
 ];

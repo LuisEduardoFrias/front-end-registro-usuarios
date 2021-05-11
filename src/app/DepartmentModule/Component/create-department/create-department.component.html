@@ -1,3 +1,6 @@
-<form-department (post)="Post($event)" cancelLink='./'>
+<div [ngClass]="{'divContainerCurso': spinkit === true}" id="divContainer">
 
-</form-department>
+    <form-department (post)="Post($event)"  [spinkit]="spinkit" cancelLink='./'>
+    </form-department>
+    
+</div>

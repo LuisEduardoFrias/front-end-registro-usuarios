@@ -1,0 +1,13 @@
+#divContainer{
+    box-sizing: border-box;
+    width: Calc(100vw + 25px);
+    height: Calc(100% - 30px);
+    overflow-y: hidden;
+    padding-right: 35px;
+}
+
+#box{
+    position: relative;
+    padding: 10px;
+    overflow-y: auto;
+}

@@ -1,3 +1,5 @@
+<spinkit *ngIf="spinkit"></spinkit>
+
 <form (submit)="Post()" [formGroup]='form'>
 
     <div class="mb-3">
@@ -14,7 +16,6 @@
         <label for="formFileDisabled" class="form-label">Sexo</label>
 
         <select class="form-select" formControlName="gender" aria-label="Default select example">
-        <option selected>-Sexo-</option>
         <option value="M">Masculino</option>
         <option value="F">Femenino</option>
         </select>
@@ -43,17 +44,16 @@
 
     <div class="mb-3">
 
-        <label for="formFileLg" class="form-label">Supervisor impediato</label>
+        <label for="formFileLg" class="form-label">Departamentos</label>
 
         <select class="form-select" formControlName="departmentId" aria-label="Default select example">
-        <option selected>Departamento</option>
         <option *ngFor="let d of Departments" [ngValue]='d.code'>{{d.name}}</option>
         </select>
 
     </div>
 
-    <div>
-        <button class="btn btn-primary">Crear</button>
+    <div id="buttons">
+        <button class="btn btn-primary">{{UpdateCreate}}</button>
         <button class="btn btn-danger" (click)="Cancel()">volver</button>
     </div>
 

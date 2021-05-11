@@ -1,14 +1,22 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Código</th>
-            <th scope="col">Nombre</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let d of depart">
-            <td>{{d.code}}</td>
-            <td>{{d.name.toUpperCase()}}</td>
-        </tr>
-    </tbody>
-</table>
+<div id="divContainer">
+
+    <div id="box">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">----------</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of depart">
+                    <td>{{d.code}}</td>
+                    <td>{{d.name.toUpperCase()}}</td>
+                    <td><button class="btn btn-dark" (click)="update(d.code)">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>

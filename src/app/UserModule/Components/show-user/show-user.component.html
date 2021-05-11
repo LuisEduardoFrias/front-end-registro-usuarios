@@ -1,28 +1,38 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Aplido</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Cédula</th>
-            <th scope="col">Fecha de nacimeinto</th>
-            <th scope="col">Posición</th>
-            <th scope="col">Supervisor inmediato</th>
-            <th scope="col">Departamento</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let u of user">
-            <td>{{u.id}}</td>
-            <td>{{u.name.toUpperCase()}}</td>
-            <td>{{u.lastName.toUpperCase()}}</td>
-            <td>{{u.gender == "F" ? "Femenino" : "Masculino"}}</td>
-            <td>{{u.identificationCard}}</td>
-            <td>{{u.birthDay}}</td>
-            <td>{{u.position.toUpperCase()}}</td>
-            <td>{{u.immediateSupervisor.toUpperCase()}}</td>
-            <td>{{u.departmentName.toUpperCase()}}</td>
-        </tr>
-    </tbody>
-</table>
+<div id="divContainer">
+
+    <div id="box">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Aplido</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Fecha de nacimeinto</th>
+                    <th scope="col">Posición</th>
+                    <th scope="col">Supervisor inmediato</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">----------</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of user">
+                    <td>{{u.id}}</td>
+                    <td>{{u.name.toUpperCase()}}</td>
+                    <td>{{u.lastName.toUpperCase()}}</td>
+                    <td>{{u.gender == "F" ? "Femenino" : "Masculino"}}</td>
+                    <td>{{u.identificationCard}}</td>
+                    <td>{{u.birthDay}}</td>
+                    <td>{{u.position.toUpperCase()}}</td>
+                    <td>{{u.immediateSupervisor.toUpperCase()}}</td>
+                    <td>{{u.departmentName.toUpperCase()}}</td>
+                    <td><button class="btn btn-dark" (click)="update(u.id)">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+</div>

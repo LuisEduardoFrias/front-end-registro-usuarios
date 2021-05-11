@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { UserModuleRoutingModule } from './userModule-routing.module';
-import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateUserComponent } from 'src/app/UserModule/Components/update-user/update-user.component';
+import { SharedModule } from 'src/app/shared/Modules/shared.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 //Component
@@ -19,16 +20,18 @@ const maskConfig: Partial<IConfig> = {
     CreateUserComponent,
     ShowUserComponent,
     FormUser,
-
+    UpdateUserComponent,
+    
   ],
   imports: [
     CommonModule,
     UserModuleRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxMaskModule.forRoot(maskConfig),
-
+    SharedModule, 
+    NgxMaskModule.forRoot(),
+    
   ],
-  providers: [HttpClient]
+  providers:[DatePipe]
 })
 export class UserModule { }

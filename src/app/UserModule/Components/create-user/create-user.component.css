@@ -1,0 +1,15 @@
+#divContainer{
+    box-sizing: border-box;
+    margin: 10px;
+    width: Calc(100vw + 25px);
+    height: Calc(100% - 30px);
+    overflow-y: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#box{
+    padding: 10px;
+    width: 300px;
+}

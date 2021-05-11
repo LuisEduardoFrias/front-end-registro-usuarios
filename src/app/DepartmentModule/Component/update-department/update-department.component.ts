@@ -1,24 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DepartmentDto } from 'src/app/shared/Entities/department/department-dto';
 import { DepartmentService } from 'src/app/shared/Services/Department/department.service';
 
 @Component({
-  selector: 'app-create-department',
-  templateUrl: './create-department.component.html',
-  styleUrls: ['./create-department.component.css']
+  selector: 'app-update-department',
+  templateUrl: './update-department.component.html',
+  styleUrls: ['./update-department.component.css']
 })
-export class CreateDepartmentComponent{
+export class UpdateDepartmentComponent{
 
   public spinkit:boolean = false;
+  public Depart : DepartmentDto;
+  
+  constructor(private DepartmentService: DepartmentService, private router: Router) 
+  {
+    this.Depart = this.router.getCurrentNavigation().extras.state.Depart;
+  }
 
-  constructor(private DepartmentService: DepartmentService) { }
-
-  Post(Department: DepartmentDto)
+  Put(Department: DepartmentDto)
   {
     this.spinkit = true;
 
-    this.DepartmentService.Post(Department).subscribe(observable =>
+    this.DepartmentService.Put(Department).subscribe(observable =>
     {
+            
       this.spinkit = false;
 
       if (observable === null)

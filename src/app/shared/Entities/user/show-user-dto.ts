@@ -1,4 +1,4 @@
-import { DepartmentDto } from "./department-dto";
+import { DepartmentDto } from "../department/department-dto";
 
 export class ShowUserDto {
 

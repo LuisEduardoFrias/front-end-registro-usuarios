@@ -1,30 +1,43 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DepartmentDto } from 'src/app/Entities/Entities/department-dto';
-import { OnlyNumberDirective } from 'src/app/DepartmentModule/Directives/only-number.directive';
+import { DepartmentDto } from 'src/app/shared/Entities/department/department-dto';
 
 @Component({
   selector: 'form-department',
   templateUrl: './form-department.component.html',
   styleUrls: ['./form-department.component.css']
 })
-export class FormDepartment{
+export class FormDepartment implements OnInit{
 
   @Output()
-  post: EventEmitter<DepartmentDto> = new EventEmitter<DepartmentDto>();
+  public post: EventEmitter<DepartmentDto> = new EventEmitter<DepartmentDto>();
 
   @Input()
-  cancelLink: string;
+  public cancelLink: string;
 
+  @Input()
+  public spinkit: boolean;
+
+  @Input()
+  public dataDepart?: DepartmentDto;
+
+  public UpdateCreate: string;
   public form: FormGroup;
 
-  constructor(private formBuild: FormBuilder, private router: Router)
-  {
-    this.form = formBuild.group(
+  constructor(private formBuild: FormBuilder, private router: Router){}
+
+  ngOnInit(): void {
+
+    this.UpdateCreate = this.dataDepart != undefined ? "Editar" : "Crear";
+
+    this.form = this.formBuild.group(
     {
-      code: ['', [Validators.required]],
-      name: ['', [Validators.required,Validators.max(25)]],
+      code: [this.dataDepart != undefined ? this.dataDepart.code : '' ,
+      [Validators.required]],
+  
+      name: [this.dataDepart != undefined ? this.dataDepart.name : '' ,
+      [Validators.required,Validators.max(25)]],
     });
   }
 

@@ -1,3 +1,8 @@
-button {
-    margin-left: 5px;
+#buttons {
+    display: flex;
+    justify-content:space-between;
+}
+
+button{
+    width: 48%;
 }

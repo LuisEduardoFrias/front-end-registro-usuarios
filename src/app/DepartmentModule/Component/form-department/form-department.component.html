@@ -1,8 +1,10 @@
+<spinkit *ngIf="spinkit === true"></spinkit>
+
 <form (submit)="Post()" [formGroup]='form'>
 
     <div class="mb-3">
         <label for="formFile" class="form-label">Codigo</label>
-        <input OnlyNumber class="form-control" id="exampleFormControlInput1" formControlName="code" type="text">
+        <input OnlyNumber [disabled]='dataDepart != undefined' class="form-control" id="exampleFormControlInput1" formControlName="code" type="text">
     </div>
 
     <div class="mb-3">
@@ -10,8 +12,9 @@
         <input class="form-control" id="exampleFormControlInput1" formControlName="name" type="text">
     </div>
 
-    <div>
-        <button class="btn btn-primary">Crear</button>
+    <div id="buttons">
+        <button class="btn btn-primary">{{UpdateCreate}}</button>
+
         <button class="btn btn-danger" (click)="Cancel()">Volver</button>
     </div>
 
