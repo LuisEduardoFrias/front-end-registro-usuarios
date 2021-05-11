@@ -1,4 +1,7 @@
-## Pasos para ejecutar la app:
+## front-end-registro-usuarios
+ Aplicacion de registro de usuarios. (Front End).
+ 
+#Pasos para ejecutar la app:
 
 Clone o descargue el repositorio.
 Abra el proyecto con visual studio code.
