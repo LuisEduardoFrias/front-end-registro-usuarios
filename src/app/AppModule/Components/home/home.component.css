@@ -1,0 +1,13 @@
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}

@@ -1,20 +1,72 @@
-#container{
+#Container {
+    background-color: rgb(19, 19, 19);
+    padding-bottom: 1px;
+}
+
+#Container ul li {
+    list-style-type: none;
+    display: table-cell;
+}
+
+#Container ul {
+    display: table;
+    table-layout: fixed;
+}
+
+#Container ul li a {
+    position: relative;
+    display: block;
     width: 200px;
-    height: 50px;
-    border: 5px double lightgray;
-    box-shadow: lightslategray 3px 3px 3px;
-    border-radius: 10px 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#container:hover{
-    background-color: rgba(177, 116, 3, 0.486);
-    transform: translate3d(5px, 5px, 5px);
-}
-
-span{
+    height: 30px;
+    text-align: center;
+    color: rgb(216, 216, 216);
     font-size: 15px;
+    border-radius: 15px;
+    background-color: #333;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#Container ul li a:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    z-index: -1;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+}
+
+#Container ul li:nth-child(1) a:before {
+    background-color: #3b5999;
+}
+
+#Container ul li:nth-child(1) a:hover {
+    color: #3b5999;
+    box-shadow: 0 0 5px #3b5999;
+    -webkit-box-shadow: 0 0 5px #3b5999;
+    -moz-box-shadow: 0 0 5px #3b5999;
+    -o-box-shadow: 0 0 5px #3b5999;
+    text-shadow: 0 0 5px #3b5999;
+    -webkit-text-shadow: 0 0 5px #3b5999;
+    -moz-text-shadow: 0 0 5px #3b5999;
+    -o-text-shadow: 0 0 5px #3b5999;
+    cursor: pointer;
+}
+
+#Container ul li:nth-child(1) a:hover:before {
+    box-shadow: 0 0 15px #3b5999;
+    -webkit-box-shadow: 0 0 15px #3b5999;
+    -moz-box-shadow: 0 0 15px #3b5999;
+    -o-box-shadow: 0 0 15px #3b5999;
 }

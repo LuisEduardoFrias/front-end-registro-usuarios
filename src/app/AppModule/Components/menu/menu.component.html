@@ -1,5 +1,7 @@
-<div>
-    <div (click)="IsClick()" id="container">
-        <span>{{Tittle}}</span>
-    </div>
+<div id="Container">
+
+    <ul>
+        <li><a *ngFor="let m of Menus" (click)="IsClick(m.Link)">{{m.Tittle}}</a></li>
+    </ul>
+
 </div>

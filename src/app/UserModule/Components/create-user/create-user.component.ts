@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateUserDto } from 'src/app/Entities/Entities/create-user-dto';
+import { UserService } from 'src/app/services/Services/User/user.service';
 
 @Component({
   selector: 'app-create-user',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private UserService: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  Post(createUser : CreateUserDto) {
+     this.UserService.Post(createUser).subscribe(observable => console.log(observable));
   }
 
 }

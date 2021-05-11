@@ -1,8 +1,15 @@
-#container{
+#body {
+    width: 100%;
+    height: Calc(100vh - 122px);
     padding: 5px;
-/*     background: #77A1D3;
+    display: flex;
+    background: #77A1D3;
     background: -webkit-linear-gradient(to top, #E684AE, #79CBCA, #77A1D3);
-    background: linear-gradient(to top, #E684AE, #79CBCA, #77A1D3); */
-    width: 100vw;
-    height: 100vh;
+    background: linear-gradient(to top, #E684AE, #79CBCA, #77A1D3);
+    overflow: hidden;
+}
+
+#menu {
+    padding: absolute;
+    top: 0px;
 }

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  linkServer: "http://localhost:43336/"
 };

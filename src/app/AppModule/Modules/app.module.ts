@@ -7,19 +7,22 @@ import { AppComponent } from '../Components/app-componet/app.component';
 import { HomeComponent } from '../Components/home/home.component';
 import { HeaderComponent } from '../Components/header/header.component';
 import { MenuComponent } from '../Components/menu/menu.component';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [FormBuilder, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
