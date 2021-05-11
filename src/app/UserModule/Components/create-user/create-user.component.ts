@@ -11,8 +11,10 @@ export class CreateUserComponent{
 
   constructor(private UserService: UserService) { }
 
-  Post(createUser : CreateUserDto) {
-     this.UserService.Post(createUser).subscribe(observable => console.log(observable));
+  Post(createUser: CreateUserDto)
+  {
+    debugger;
+    this.UserService.Post(createUser).subscribe(observable => console.log(observable));
   }
 
 }

@@ -11,8 +11,10 @@ export class CreateDepartmentComponent{
 
   constructor(private DepartmentService: DepartmentService) { }
 
-  Post(Department : DepartmentDto) {
-     this.DepartmentService.Post(Department).subscribe(observable => console.log(observable));
+  Post(Department: DepartmentDto)
+  {
+    debugger;
+    this.DepartmentService.Post(Department).subscribe(observable => console.log(observable));
   }
 
 }

@@ -13,6 +13,7 @@ export class ShowUserComponent {
 
   constructor(private userService: UserService)
   {
+    debugger;
     userService.Get().subscribe(oberver => this.user = oberver);
   }
 
