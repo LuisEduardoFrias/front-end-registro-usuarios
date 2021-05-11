@@ -1,14 +1,14 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">Código</th>
             <th scope="col">Nombre</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor(let d of depart)>
-            <th scope="row">{{d.code}}</th>
-            <td>{{d.name}}</td>
+        <tr *ngFor="let d of depart">
+            <td>{{d.code}}</td>
+            <td>{{d.name.toUpperCase()}}</td>
         </tr>
     </tbody>
 </table>

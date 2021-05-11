@@ -13,7 +13,17 @@ export class CreateDepartmentComponent{
 
   Post(Department: DepartmentDto)
   {
-    this.DepartmentService.Post(Department).subscribe(observable => alert(observable));
+    this.DepartmentService.Post(Department).subscribe(observable =>
+    {
+      if (observable === null)
+      {
+        alert("El registro a sido guardado");
+      }
+      else
+      {
+        alert("Error al guardar el registro");
+      }
+    });
   }
 
 }

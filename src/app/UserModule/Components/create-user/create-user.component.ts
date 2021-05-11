@@ -13,7 +13,16 @@ export class CreateUserComponent{
 
   Post(createUser: CreateUserDto)
   {
-    this.UserService.Post(createUser).subscribe(observable => alert(observable));
+    this.UserService.Post(createUser).subscribe(observable => {
+      if (observable === null)
+      {
+        alert("El registro a sido guardado");
+      }
+      else
+      {
+        alert("Error al guardar el registro");
+      }
+    });
   }
 
 }

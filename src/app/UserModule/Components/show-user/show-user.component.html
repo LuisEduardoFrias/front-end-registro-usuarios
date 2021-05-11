@@ -13,16 +13,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor(let u of user)>
-            <th scope="row">{{u.id}}</th>
-            <td>{{u.name}}</td>
-            <td>{{u.lastName}}</td>
-            <td>{{u.gender}}</td>
+        <tr *ngFor="let u of user">
+            <td>{{u.id}}</td>
+            <td>{{u.name.toUpperCase()}}</td>
+            <td>{{u.lastName.toUpperCase()}}</td>
+            <td>{{u.gender == "F" ? "Femenino" : "Masculino"}}</td>
             <td>{{u.identificationCard}}</td>
             <td>{{u.birthDay}}</td>
-            <td>{{u.position}}</td>
-            <td>{{u.immediateSupervisor}}</td>
-            <td>{{u.departmentName}}</td>
+            <td>{{u.position.toUpperCase()}}</td>
+            <td>{{u.immediateSupervisor.toUpperCase()}}</td>
+            <td>{{u.departmentName.toUpperCase()}}</td>
         </tr>
     </tbody>
 </table>

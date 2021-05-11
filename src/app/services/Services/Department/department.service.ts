@@ -22,6 +22,6 @@ export class DepartmentService extends HttpService {
   Post(plan: DepartmentDto): Observable<any>
   {
     debugger;
-    return this.httpclien.post(`${this.linkServer}api/departement`, plan, { headers: { "Content-Type": "application/json" } })
+    return this.httpclien.post(`${this.linkServer}api/departement`, plan)
   }
 }
