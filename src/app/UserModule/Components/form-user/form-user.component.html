@@ -1,23 +1,27 @@
 <spinkit *ngIf="spinkit"></spinkit>
 
-<div id="divImg">
-    <div>
-        <img src='../../../../assets/Icons/scroll-down-icon-home.gif'>
-    </div>
-</div>
-
 <form (submit)="Post()" [formGroup]='form'>
 
     <div class="mb-3">
         <label for="formFile" class="form-label">Nombre</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="name" type="text">
+       
+        <span>{{HasError("name")}}</span>
     </div>
 
     <div class="mb-3">
         <label for="formFileMultiple" class="form-label">Apellido</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="lastName" type="text">
+   
+        <span>{{HasError("lastName")}}</span>
     </div>
 
+    <div id="divImg">
+        <div>
+            <img src='../../../../assets/Icons/scroll-down-icon-home.gif'>
+        </div>
+    </div>
+    
     <div class="mb-3">
         <label for="formFileDisabled" class="form-label">Sexo</label>
 
@@ -26,26 +30,36 @@
         <option value="F">Femenino</option>
         </select>
 
+        <span>{{HasError("gender")}}</span>
     </div>
 
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Cédula</label>
-        <input class="form-control" mask="000-0000000-0" placeholder="000-0000000-0" id="exampleFormControlInput1" formControlName="identificationCard" type="text">
+        <input class="form-control" mask="000-0000000-0" placeholder="000-0000000-0"
+         id="exampleFormControlInput1" formControlName="identificationCard" type="text">
+    
+        <span>{{HasError("identificationCard")}}</span>
     </div>
 
     <div>
         <label for="formFileLg" class="form-label">Fecha de nacimiento</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="birthDay" type="date">
+    
+        <span>{{HasError("birthDay")}}</span>
     </div>
 
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Posición</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="position" type="text">
+    
+        <span>{{HasError("position")}}</span>
     </div>
 
     <div class="mb-3">
         <label for="formFileLg" class="form-label">Supervisor impediato</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="immediateSupervisor" type="text">
+    
+        <span>{{HasError("immediateSupervisor")}}</span>
     </div>
 
     <div class="mb-3">
@@ -56,11 +70,13 @@
         <option *ngFor="let d of Departments" [ngValue]='d.code'>{{d.name}}</option>
         </select>
 
+        <span>{{HasError("departmentId")}}</span>
     </div>
 
     <div id="buttons">
-        <button class="btn btn-primary">{{UpdateCreate}}</button>
+        <button class="btn btn-primary" [disabled]="form.invalid" >{{UpdateCreate}}</button>
         <button class="btn btn-danger" (click)="Cancel()">volver</button>
     </div>
 
 </form>
+

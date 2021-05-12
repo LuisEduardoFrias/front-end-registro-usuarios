@@ -30,7 +30,6 @@ export class UserService extends HttpService
 
   Put(user: UpdateUserDto): Observable<any>
   {
-    debugger;
     return this.httpclien.put(`${this.linkServer}api/user`, user, 
     { headers: { "Content-Type": "application/json" } });
   }

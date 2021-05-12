@@ -16,7 +16,7 @@ export class UpdateDepartmentComponent{
   
   constructor(private DepartmentService: DepartmentService, private router: Router,private toastr: ToastrService) 
   {
-    this.Depart = this.router.getCurrentNavigation().extras.state.Depart;
+    this.Depart = this.router.getCurrentNavigation()?.extras?.state.Depart;
   }
 
   Put(Department: DepartmentDto)

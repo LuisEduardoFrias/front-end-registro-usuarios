@@ -12,11 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 export class UpdateUserComponent{
 
   public spinkit:boolean = false;
-  public user? : UpdateUserDto;
+  public user : UpdateUserDto;
   
   constructor(private UserService: UserService, private router: Router, private toastr: ToastrService)  
   { 
-    this.user = this.router.getCurrentNavigation().extras.state.user;
+    this.user = this.router.getCurrentNavigation()?.extras?.state.user;
   }
 
   Put(updateUser: UpdateUserDto)

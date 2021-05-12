@@ -3,17 +3,25 @@
 <form (submit)="Post()" [formGroup]='form'>
 
     <div class="mb-3">
+
         <label for="formFile" class="form-label">Codigo</label>
-        <input OnlyNumber [disabled]="dataDepart != undefined" class="form-control" id="exampleFormControlInput1" formControlName="code" type="text">
+
+        <input #codeinput formControlName="code" OnlyNumber class="form-control" 
+        id="exampleFormControlInput1" type="text">
+
+        <span>{{HasError("code")}}</span>
     </div>
 
     <div class="mb-3">
+
         <label for="formFileMultiple" class="form-label">Nombre</label>
         <input class="form-control" id="exampleFormControlInput1" formControlName="name" type="text">
+
+        <span>{{HasError("name")}}</span>
     </div>
 
     <div id="buttons">
-        <button class="btn btn-primary">{{UpdateCreate}}</button>
+        <button class="btn btn-primary" [disabled]="form.invalid">{{updateCreate}}</button>
 
         <button class="btn btn-danger" (click)="Cancel()">Volver</button>
     </div>

@@ -1,5 +1,7 @@
+import { DepartmentDto } from "../department/department-dto";
+import { CreateUserDto } from "./create-user-dto";
 
-export class UpdateUserDto {
+export class UpdateUserDto implements CreateUserDto {
 
     id: number;
     name : string;
@@ -10,6 +12,7 @@ export class UpdateUserDto {
     position : string;
     immediateSupervisor : string;
     departmentId: number;
+    department: DepartmentDto;
 
     constructor(
     id: number,
@@ -20,7 +23,8 @@ export class UpdateUserDto {
     birthDay: Date,
     position : string,
     immediateSupervisor : string,
-    departmentId: number)
+    departmentId: number,
+    department: DepartmentDto)
     {
         this.id = id;
         this.name = name;
@@ -31,6 +35,7 @@ export class UpdateUserDto {
         this.position = position;
         this.immediateSupervisor = immediateSupervisor;
         this.departmentId = departmentId;
-        this.departmentId = departmentId;
+        this.department = department;
     }
+    
 }
