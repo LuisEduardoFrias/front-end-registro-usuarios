@@ -44,6 +44,7 @@ export class FormDepartment implements OnInit{
   Post()
   {
     this.post.emit(this.form.value);
+    this.form.reset();
   }
 
   Cancel() {

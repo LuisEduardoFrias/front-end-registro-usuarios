@@ -79,6 +79,7 @@ export class FormUser implements OnInit{
   Post()
   {
     this.post.emit(this.form.value);
+    this.form.reset();
   }
 
   Cancel() {

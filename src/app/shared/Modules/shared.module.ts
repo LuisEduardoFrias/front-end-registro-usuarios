@@ -5,18 +5,20 @@ import { OnlyNumberDirective } from '../Directives/only-number.directive';
 
 @NgModule({
   declarations: 
-  [ 
+  [
     OnlyNumberDirective,
-    SpinkitComponent
+    SpinkitComponent,
+    
   ],
   imports: 
   [
-    CommonModule
+      CommonModule,
   ],
   exports:
   [
     OnlyNumberDirective,
-    SpinkitComponent
-  ]
+      SpinkitComponent,
+    
+  ],
 })
 export class SharedModule { }

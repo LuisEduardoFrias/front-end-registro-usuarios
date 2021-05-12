@@ -4,7 +4,8 @@ import { UserModuleRoutingModule } from './userModule-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from 'src/app/UserModule/Components/update-user/update-user.component';
 import { SharedModule } from 'src/app/shared/Modules/shared.module';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 //Component
 import { CreateUserComponent } from 'src/app/UserModule/Components/create-user/create-user.component';
@@ -28,10 +29,11 @@ const maskConfig: Partial<IConfig> = {
     UserModuleRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule, 
-    NgxMaskModule.forRoot(),
+    SharedModule,
+    NgxMaskModule.forRoot(maskConfig),
+    ToastrModule.forRoot(),
     
   ],
-  providers:[DatePipe]
+  providers:[DatePipe, ToastrService]
 })
 export class UserModule { }

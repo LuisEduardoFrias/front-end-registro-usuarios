@@ -14,7 +14,7 @@ export class OnlyNumberDirective implements OnInit {
   }
 
   OnlyNumb(e: any)
-  {debugger;
+  {
     var key = window.event ? e.which : e.keyCode;
         
     if (key < 48 || key > 57) {

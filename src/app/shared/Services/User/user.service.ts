@@ -22,15 +22,16 @@ export class UserService extends HttpService
     { headers: { "Accept": "application/json" } });
   }
 
-  Post(plan: CreateUserDto): Observable<any>
+  Post(user: CreateUserDto): Observable<any>
   {
-    return this.httpclien.post(`${this.linkServer}api/user`, plan, 
+    return this.httpclien.post(`${this.linkServer}api/user`, user, 
     { headers: { "Content-Type": "application/json" } });
   }
 
-  Put(plan: UpdateUserDto): Observable<any>
+  Put(user: UpdateUserDto): Observable<any>
   {
-    return this.httpclien.put(`${this.linkServer}api/user`, plan, 
+    debugger;
+    return this.httpclien.put(`${this.linkServer}api/user`, user, 
     { headers: { "Content-Type": "application/json" } });
   }
 }

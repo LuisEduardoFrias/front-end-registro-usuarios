@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateUserDto } from 'src/app/shared/Entities/user/create-user-dto';
 import { UserService } from 'src/app/shared/Services/User/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-user',
@@ -11,7 +12,7 @@ export class CreateUserComponent{
 
   public spinkit:boolean = false;
 
-  constructor(private UserService: UserService) { }
+  constructor(private UserService: UserService,private toastr: ToastrService) { }
 
   Post(createUser: CreateUserDto)
   {
@@ -23,10 +24,10 @@ export class CreateUserComponent{
 
       if (observable === null)
       {
-        alert("El registro a sido guardado");
+        this.toastr.success('El registro a sido creado.','Éxito');
       }
 
-    }, error => {console.log(error); alert("Error al guardar el registro"); this.spinkit = false;});
+    }, error => {console.log(error); this.toastr.error('Error al crear el registro.','Error'); this.spinkit = false;});
   }
 
 }

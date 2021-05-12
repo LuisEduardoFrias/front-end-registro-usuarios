@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DepartmentRoutingModule } from './department-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/Modules/shared.module';
+import { ToastrModule, ToastrService, TOAST_CONFIG } from 'ngx-toastr';
 
 //component
 import { CreateDepartmentComponent } from 'src/app/DepartmentModule/Component/create-department/create-department.component';
@@ -24,7 +25,9 @@ import { UpdateDepartmentComponent} from 'src/app/DepartmentModule/Component/upd
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    ToastrModule.forRoot(),
     
-  ]
+  ],
+  providers:[ToastrService,]
 })
 export class DepartmentModule { }

@@ -15,8 +15,11 @@
                     <td>{{d.name.toUpperCase()}}</td>
                     <td><button class="btn btn-dark" (click)="update(d.code)">Editar</button></td>
                 </tr>
+                <tr *ngIf="depart == undefined">
+                    <td><strong>Sin datos para mostrar</strong> </td>
+                </tr>
             </tbody>
         </table>
     </div>
-    
+
 </div>

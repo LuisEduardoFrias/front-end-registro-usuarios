@@ -10,16 +10,26 @@ import { DepartmentService } from 'src/app/shared/Services/Department/department
 })
 export class ShowDepartmetComponent {
 
-  public depart: DepartmentDto[];
+  public depart?: DepartmentDto[] = undefined;
   private NavigationExtras : NavigationExtras;
+  public spinkit: boolean;
 
-  constructor(private departmetService: DepartmentService, private router : Router)
+  constructor(private departmetService: DepartmentService, private router: Router)
   {
-    departmetService.Get().subscribe(oberver => {this.depart = oberver});
+    this.spinkit = true;
+    departmetService.Get().subscribe(oberver =>
+    {
+      this.depart = oberver;
+      this.spinkit = false;
+    }, error =>
+    {
+      console.log(error);
+      this.spinkit = false;
+    });
   }
 
   update(id : number)
-  {debugger
+  {
     for(let i = 0; i < this.depart.length; i++)
     {
       if(this.depart[i].code == id)

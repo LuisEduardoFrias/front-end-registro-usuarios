@@ -10,12 +10,22 @@ import { UserService } from 'src/app/shared/Services/User/user.service';
 })
 export class ShowUserComponent {
 
-  public user: ShowUserDto[];
+  public user?: ShowUserDto[] = undefined;
   private NavigationExtras : NavigationExtras;
+  public spinkit: boolean;
 
   constructor(private userService: UserService, private router : Router)
   {
-    userService.Get().subscribe(oberver => {this.user = oberver},error => console.log(error));
+    this.spinkit = true;
+    userService.Get().subscribe(oberver =>
+    {
+      this.user = oberver;
+      this.spinkit = false;
+    }, error =>
+    {
+      console.log(error);
+      this.spinkit = false;
+    });
   }
 
   update(id : number){

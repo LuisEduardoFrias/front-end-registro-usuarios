@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import {  Router } from '@angular/router';
 import { UpdateUserDto } from 'src/app/shared/Entities/user/update-user-dto';
 import { UserService } from 'src/app/shared/Services/User/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-user',
@@ -11,9 +12,9 @@ import { UserService } from 'src/app/shared/Services/User/user.service';
 export class UpdateUserComponent{
 
   public spinkit:boolean = false;
-  public user : UpdateUserDto;
+  public user? : UpdateUserDto;
   
-  constructor(private UserService: UserService, private router: Router)  
+  constructor(private UserService: UserService, private router: Router, private toastr: ToastrService)  
   { 
     this.user = this.router.getCurrentNavigation().extras.state.user;
   }
@@ -28,9 +29,9 @@ export class UpdateUserComponent{
 
       if (observable === null)
       {
-        alert("El registro a sido guardado");
+        this.toastr.success('El registro a sido editado.','Éxito');
       }
 
-    }, error => {console.log(error); alert("Error al guardar el registro"); this.spinkit = false;});
+    }, error => {console.log(error); this.toastr.error('Error al editar el registro.','Error'); this.spinkit = false;});
   }
 }

@@ -1,7 +1,9 @@
+<spinkit *ngIf="spinkit"></spinkit>
+
 <div id="divContainer">
 
     <div id="box">
-        
+
         <table class="table">
             <thead>
                 <tr>
@@ -30,9 +32,12 @@
                     <td>{{u.departmentName.toUpperCase()}}</td>
                     <td><button class="btn btn-dark" (click)="update(u.id)">Editar</button></td>
                 </tr>
+                <tr *ngIf="user == undefined">
+                    <td><strong>Sin datos para mostrar</strong> </td>
+                </tr>
             </tbody>
         </table>
 
     </div>
-    
+
 </div>

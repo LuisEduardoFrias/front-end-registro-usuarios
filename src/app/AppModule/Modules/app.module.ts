@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 //Component
 import { AppComponent } from '../Components/app-componet/app.component';
 import { HomeComponent } from '../Components/home/home.component';
 import { HeaderComponent } from '../Components/header/header.component';
 import { MenuComponent } from '../Components/menu/menu.component';
-import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
-import { FormBuilder } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,9 +21,11 @@ import { FormBuilder } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    
   ],
-  providers: [FormBuilder, HttpClient],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

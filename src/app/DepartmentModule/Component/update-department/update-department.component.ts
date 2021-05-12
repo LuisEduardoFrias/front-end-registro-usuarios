@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DepartmentDto } from 'src/app/shared/Entities/department/department-dto';
 import { DepartmentService } from 'src/app/shared/Services/Department/department.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-department',
@@ -13,7 +14,7 @@ export class UpdateDepartmentComponent{
   public spinkit:boolean = false;
   public Depart : DepartmentDto;
   
-  constructor(private DepartmentService: DepartmentService, private router: Router) 
+  constructor(private DepartmentService: DepartmentService, private router: Router,private toastr: ToastrService) 
   {
     this.Depart = this.router.getCurrentNavigation().extras.state.Depart;
   }
@@ -29,10 +30,10 @@ export class UpdateDepartmentComponent{
 
       if (observable === null)
       {
-        alert("El registro a sido guardado");
+        this.toastr.success('El registro a sido editado..','Éxito');
       }
       
-    }, error => {console.log(error); alert("Error al guardar el registro"); this.spinkit = false;});
+    },error => {console.log(error); this.toastr.error('Error al editar el registro.','Error'); this.spinkit = false;});
   }
 
 }

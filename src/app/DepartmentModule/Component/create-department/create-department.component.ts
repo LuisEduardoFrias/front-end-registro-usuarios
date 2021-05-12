@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartmentDto } from 'src/app/shared/Entities/department/department-dto';
 import { DepartmentService } from 'src/app/shared/Services/Department/department.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-department',
@@ -11,7 +12,7 @@ export class CreateDepartmentComponent{
 
   public spinkit:boolean = false;
 
-  constructor(private DepartmentService: DepartmentService) { }
+  constructor(private DepartmentService: DepartmentService,private toastr: ToastrService) { }
 
   Post(Department: DepartmentDto)
   {
@@ -23,10 +24,10 @@ export class CreateDepartmentComponent{
 
       if (observable === null)
       {
-        alert("El registro a sido guardado");
+        this.toastr.success('El registro a sido creado.','Éxito');
       }
       
-    }, error => {console.log(error); alert("Error al guardar el registro"); this.spinkit = false;});
+    }, error => {console.log(error); this.toastr.error('Error al crear el registro.','Error'); this.spinkit = false;});
   }
 
 }
