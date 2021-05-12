@@ -51,8 +51,7 @@ export class FormUser implements OnInit{
 
     this.form = this.formBuild.group(
     {
-      id: [ this.dataUser != undefined ? this.dataUser.id : '' ,
-      [Validators.required, Validators.maxLength(25)]],
+      id: this.dataUser != undefined ? this.dataUser.id : '',
   
       name: [ this.dataUser != undefined ? this.dataUser.name : '' ,
       [Validators.required, Validators.maxLength(25)]],
